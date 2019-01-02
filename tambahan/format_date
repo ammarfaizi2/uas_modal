@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html>
+<head>
+ <title>DatePicker</title>
+ <link rel="stylesheet" href="<?php  echo base_url();?>asset/bootstrap/css/bootstrap.min.css">
+   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.5.0/css/font-awesome.min.css">
+ <!--Datepicker CSS-->
+ <link rel="stylesheet" href="<?php  echo base_url();?>asset/datepicker/css/bootstrap-datepicker3.css">
+ <link rel="stylesheet" href="<?php  echo base_url();?>asset/dist/css/AdminLTE.min.css">
+</head>
+<body>
+<div class="container">
+ <h3>Merubah Format Type Data Date</h3>
+ <div class="col-sm-3">
+ <div class="form-group">
+        <label>Date:</label>
+            <div class="input-group date">
+                <div class="input-group-addon">
+                    <i class="fa fa-calendar"></i>
+                </div>
+                  <input type="text" class="form-control pull-right" id="tanggal">
+            </div>
+                <!-- /.input group -->
+    </div>
+    </div>
+    <div class="col-sm-12">
+    <?php
+     $hariini=date("Y-m-d");
+     echo "Contoh Tanggal Format yyyy-mm-dd = " .$hariini ."<br>";
+     $tgllahir=date('d-m-Y', strtotime($hariini));
+     echo "Contoh Tanggal Format dd-mm-yyyy = " .$tgllahir ."<br>";
+    ?>
+    </div>
+</div>
+
+<!-- jQuery 2.2.3 -->
+<script src="<?php  echo base_url();?>asset/plugins/jQuery/jquery-2.2.3.min.js"></script>
+<!-- Bootstrap 3.3.6 -->
+<script src="<?php  echo base_url();?>asset/bootstrap/js/bootstrap.min.js"></script>
+<script src="<?php  echo base_url();?>asset/datepicker/js/bootstrap-datepicker.js"></script>
+<script type="text/javascript">
+            $(document).ready(function () {
+                $('#tanggal').datepicker({
+                 //merubah format tanggal datepicker ke dd-mm-yyyy
+                    format: "dd-mm-yyyy",
+                    //aktifkan kode dibawah untuk melihat perbedaanya, disable baris perintah diatasa
+                    //format: "dd-mm-yyyy",
+                    autoclose: true
+                });
+            });
+</script>
+</body>
+</html>
+  
